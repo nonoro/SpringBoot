@@ -1,0 +1,28 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+    <tr>
+        <th>{{id}}</th>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+    </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!-- POST, GET, UPDATE, DELETE 근데 HTML에는 POST와 GET만 있음 -->
+<!-- 그래서 GET, a 태그 즉, 링크를 사용! 나중에 JS를 사용하면 위 4가지를 모두 쓸 수 있음 -->
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
+<a href="/articles" class="btn btn-primary">Go to Article List</a>
+
+{{>layouts/footer}}
