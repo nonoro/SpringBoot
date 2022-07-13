@@ -9,12 +9,22 @@ spring:
     properties:
       hibernate:
         format_sql: 'true'
+    hibernate:
+      ddl-auto: update
 # DB URL 고정 설정
 # 유니크 URL 생성 X
   datasource:
     generate-unique-name: 'false'
-# 고정 URL 설정
+    #고정 url 설정
     url: jdbc:h2:mem:testdb
+#    # PostgreSQL 연동
+#    url: jdbc:postgresql://localhost:5432/firstproject_db
+#    username: postgres
+#    password: postgres
+#    data: classpath:/data.sql
+#    initialization-mode: never
+
+
 
 # JPA 로깅 설정
 # 디버그 레벨로 쿼리 출력
